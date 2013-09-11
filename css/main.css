@@ -297,4 +297,19 @@ textarea {
     h3 {
         page-break-after: avoid;
     }
+
+
+    /*Brooks Stuff below*/
+
+    #SequenceData {
+        width:400px;
+        height:300px;
+        overflow:auto;
+    }
+
+
+
+
+
+
 }

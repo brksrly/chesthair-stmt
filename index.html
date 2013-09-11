@@ -19,67 +19,25 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="js/vendor/jquery-1.9.0.min.js"></script>
+    <script src="js/vendor/raphael.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+        $(function () {
+            swHoldingEntryDraw();
+        })
+    </script>
+
 
 </head>
 <body>
-<script>
-    var dojoConfig = {
-        async:true,
-        //todo canvas render is blurry pixelDensity issue i guess.
-        gfxRenderer:"svg,silverlight,vml",
-        packages:[
-            {
-                name:"ChestHairDojo",
-                location:location.pathname.replace(/\/[^/]*$/, '')
-            }
-        ]
-    };
-</script>
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
     improve your experience.</p>
 <![endif]-->
-<!--Debug Buttons-->
-<button id="plotButton">plotButton</button>
-<button id="deleteButton">deleteButton</button>
-
-
-<!-- Charting DIV -->
-<div id="cornerDiv" style="position: absolute; overflow:hidden;"></div>
-<div id="xDiv" style="position: absolute; overflow:hidden;"></div>
-<div id="yDiv" style="position: absolute; overflow:hidden;"></div>
-<div id="dataAreaDiv" style="position: absolute; overflow:scroll;"></div>
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/dojo/1.8.1/dojo/dojo.js" data-dojo-config="async:true"></script>
-
-<script>
-    require(["ChestHairDojo/js/HoldingGrapher", "dojo/on", "dojo/dom"], function (HoldingGraphModule, on, dom) {
-
-        // Layout Config variables
-        var pos = {X:380, Y:80};
-        var yAxisWidth = 150;
-        var xAxisHeight = 85;
-
-        var plotButton = dom.byId("plotButton");
-        var deleteButton = dom.byId("deleteButton");
-
-        on(plotButton, "click", function (event) {
-            HoldingGraphModule.initSurfaces(pos, yAxisWidth, xAxisHeight);
-        });
-
-        on(deleteButton, "click", function (event) {
-            HoldingGraphModule.clear();
-        });
-
-
-
-    });
-</script>
-
-
+<div id="info" style="position: absolute; top:10px; left:20px;"></div>
+<script src="js/plugins.js"></script>
 </body>
 </html>
